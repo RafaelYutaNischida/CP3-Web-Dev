@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameVault — Seus Jogos Favoritos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== TELA DE LOGIN ===== -->
+  <div id="tela-login">
+    <div class="login-wrapper">
+      <div class="login-card">
+        <div class="login-logo">
+          <span class="pixel-icon">🎮</span>
+          <h1 class="login-title">GameVault</h1>
+          <p class="login-subtitle">Seus jogos favoritos, em um só lugar</p>
+        </div>
+
+        <div id="erro-login" class="mensagem-erro escondido"></div>
+
+        <div class="campo-grupo">
+          <label for="input-usuario">Usuário</label>
+          <input type="text" id="input-usuario" placeholder="Digite seu usuário" autocomplete="off" />
+        </div>
+
+        <div class="campo-grupo">
+          <label for="input-senha">Senha</label>
+          <input type="password" id="input-senha" placeholder="Digite sua senha" />
+        </div>
+
+        <button id="btn-login" onclick="fazerLogin()">ENTRAR</button>
+
+        <p class="login-hint">▶ Pressione ENTRAR para começar</p>
+      </div>
+
+      <div class="scanlines"></div>
+    </div>
+  </div>
+
+  <!-- ===== TELA DA LISTA ===== -->
+  <div id="tela-lista" class="escondido">
+
+    <header class="header">
+      <div class="header-esquerda">
+        <span class="header-icon">🕹️</span>
+        <div>
+          <h1 class="header-titulo">GameVault</h1>
+          <p class="header-subtitulo">Sua coleção pessoal</p>
+        </div>
+      </div>
+      <button class="btn-sair" onclick="fazerLogout()">⏏ Sair</button>
+    </header>
+
+    <main class="main-content">
+
+      <!-- Adicionar item -->
+      <section class="secao-adicionar">
+        <h2 class="secao-titulo">➕ Adicionar Jogo</h2>
+        <div id="erro-adicionar" class="mensagem-erro escondido"></div>
+        <div class="adicionar-controles">
+          <input type="text" id="input-novo-jogo" placeholder="Nome do jogo..." />
+          <div class="adicionar-botoes">
+            <button class="btn-primario" onclick="adicionarNoFim()">Adicionar no Fim</button>
+            <button class="btn-secundario" onclick="adicionarNoInicio()">Adicionar no Início</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lista de jogos -->
+      <section class="secao-lista">
+        <div class="lista-header">
+          <h2 class="secao-titulo">🎯 Minha Coleção</h2>
+          <span id="contador-jogos" class="contador"></span>
+        </div>
+        <div id="container-lista"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
